@@ -61,7 +61,7 @@ def orderform():
         except:
             print("Error in retrieving Users from order.db.")
 
-        order = Order(create_order_form.first_name.data, create_order_form.last_name.data, create_order_form.gender.data, create_order_form.membership.data, create_order_form.remarks.data)
+        order = Order(create_order_form.first_name.data, create_order_form.last_name.data, create_order_form.gender.data)
         order_dict[order.get_order_id()] = order
         db['Orders'] = order_dict
         return redirect(url_for('order'))
@@ -75,10 +75,10 @@ def delete_order(id):
 
     order_dict.pop(id)
 
-    db['Order'] = order_dict
+    db['Orders'] = order_dict
     db.close()
 
-    return redirect(url_for('order'))
+    return redirect(url_for('orderform'))
 
 @app.route('/settings')
 def settings():

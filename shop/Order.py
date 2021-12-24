@@ -1,15 +1,13 @@
 class Order:
     count_id = 0
 
-    def __init__(self, first_name, last_name, gender, membership,remarks):
+    def __init__(self, first_name, last_name, gender):
         Order.count_id += 1
         self.__order_id = Order.count_id
         self.__first_name = first_name
         self.__last_name = last_name
         self.__gender = gender
-        self.__membership = membership
-        self.__remarks = remarks
-
+        
     def get_order_id(self):
         return self.__order_id
 
