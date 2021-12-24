@@ -61,7 +61,7 @@ def orderform():
         except:
             print("Error in retrieving Users from order.db.")
 
-        order = Order(create_order_form.first_name.data, create_order_form.last_name.data, create_order_form.gender.data)
+        order = Order(create_order_form.name.data, create_order_form.total.data, create_order_form.status.data, create_order_form.date.data)
         order_dict[order.get_order_id()] = order
         db['Orders'] = order_dict
         return redirect(url_for('order'))
