@@ -24,14 +24,11 @@
   <table class="table ">
     <thead>
       <tr>
-        <th>User ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Gender</th>
-        <th>Membership</th>
-        <th>Remarks</th>
-        <th></th>
-        <th></th>
+        <th>Order Id</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>Delete / Views</th>
       </tr>
     </thead>
     <tbody>
@@ -41,14 +38,6 @@
         <td>{{ order.get_first_name() }}</td>
         <td>{{ order.get_last_name() }}</td>
         <td>{{ order.get_gender() }}</td>
-        {% if order.get_membership() == "F" %}
-        <td>Fellow</td>
-        {% elif order.get_membership() == "S" %}
-        <td>Senior</td>
-        {% elif order.get_membership() == "P" %}
-        <td>Professional</td>
-        {% endif %}
-        <td>{{ order.get_remarks() }}</td>
         <td>
           <form action="{{url_for('delete_order', id = order.get_order_id())}}"  method="POST">
             <!-- <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete {{order.get_first_name()}} {{order.get_last_name()}}?');"> -->
@@ -56,7 +45,7 @@
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal_{{order.get_order_id()}}">
               Delete
             </button>
-
+            <button type='button' class='btn btn-primary'  ><a href="/home" style='text-decoration:none; color:aliceblue;'>Views</a></button>
             <!-- The Modal -->
             <div class="modal" id="myModal_{{order.get_order_id()}}">
               <div class="modal-dialog">
@@ -82,7 +71,6 @@
                 </div>
               </div>
             </div>
-
           </form>
         </td>
       </tr>
