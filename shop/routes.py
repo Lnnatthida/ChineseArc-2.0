@@ -15,7 +15,7 @@ def login_page():
     return render_template('login.html')
 @app.route('/register')
 def register_page():
-    create_customer_form
+
     return render_template('register.html')
 @app.route('/forgot_password')
 def forgot_password_page():
