@@ -1,10 +1,10 @@
 from flask import Flask,render_template , request, redirect, url_for
-from .Forms import CreateOrderForm
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
 import shelve
-from .Order import Order
+from Order import Order
+from Forms import CreateOrderForm
 app = Flask(__name__)
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
@@ -91,7 +91,7 @@ def catalog():
 def CreateProduct():
     return render_template('CreateProduct.html')
 
-from shop import app
+
 
 if __name__ == '__main__':
     app.run(debug=True)
