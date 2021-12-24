@@ -1,6 +1,6 @@
 class ProductInfo:
     def __init__(self,product_image,product_name,product_category,
-                 product_price,product_description,product_stock,):
+                 product_price,product_description,product_stock,create_date):
         self.__product_id = 0
         self.__product_image = product_image
         self.__product_name = product_name
@@ -8,6 +8,7 @@ class ProductInfo:
         self.__product_price = product_price
         self.__product_description = product_description
         self.__product_stock = product_stock
+        self.__create_date = create_date
 
     def set_product_id(self,product_id):
         self.__product_id = product_id
@@ -30,6 +31,9 @@ class ProductInfo:
     def product_stock(self,product_stock):
         self.__product_stock = product_stock
 
+    def product_stock(self,create_date):
+        self.__create_date = create_date
+
     def get_product_id(self):
         return self.__product_id
 
@@ -50,3 +54,6 @@ class ProductInfo:
 
     def get_product_stock(self):
         return self.__product_stock
+
+    def get_create_date(self):
+        return self.__create_date
