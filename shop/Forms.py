@@ -12,5 +12,5 @@ class CreateOrderForm(Form):
     name = StringField('Name', [validators.Length(min=1, max=150), validators.DataRequired()])
     total = IntegerField('Total', [validators.DataRequired()])
     status = SelectField('Status', [validators.DataRequired()], choices=[('', 'N/A'), ('Delivered', 'Delivered'), ('Not Delivered', 'Not Delivered')], default='')
-    date = DateTimeField("Time of creation",[validators.DataRequired()],format="%Y-%m-%dT%H:%M:%S", default=datetime.datetime.today())
+    date = DateTimeField("Time of creation",[validators.DataRequired()],format="%Y-%m-%dT%H:%M:%S", default=datetime.datetime.now())
         

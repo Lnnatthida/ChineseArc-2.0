@@ -19,7 +19,19 @@
   <p>There are {{ count }} orders.</p>
   {% endif %}
 </div>
-
+<form>
+  <div class="d-none d-sm-inline-block form-inline navbar-search " style='padding-bottom: 20px;'>
+  <div class="input-group">
+      <input type="text" class="form-control bg-light border-0 small" placeholder="Order ID..."
+         aria-label="Search" aria-describedby="basic-addon2">
+     <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+              <i class="fas fa-search fa-sm"></i>
+          </button>
+     </div>
+  </div>
+  </div>
+</form>
 <div>
   <table class="table ">
     <thead>
