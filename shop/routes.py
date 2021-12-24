@@ -82,3 +82,7 @@ def settings():
 def catalog():
     return render_template('catalog.html')
 
+@app.route('/CreateProduct')
+def CreateProduct():
+    return render_template('CreateProduct.html')
+
